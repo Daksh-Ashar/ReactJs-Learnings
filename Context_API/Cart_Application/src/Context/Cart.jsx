@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const CartContext = createContext(null);
 
 export const CartProvider = ({children}) => {
-    const [items, setItems] = useState([{"name":"test","price":100}]);
+    const [items, setItems] = useState([]);
     const providerObj = {
         items,
         setItems

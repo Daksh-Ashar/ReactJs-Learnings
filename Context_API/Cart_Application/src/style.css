@@ -12,4 +12,24 @@
     height:10%;
     border: 1px solid black;
     padding: 0.2rem;
+    margin:0.2rem;
+}
+
+.itemsList {
+    display: flex;
+}
+
+.cartList{
+    display: flex;
+    flex-direction: column;
+}
+
+.cartListHeader{
+    margin-top: 5%;
+}
+
+.cartSection {
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
 }
