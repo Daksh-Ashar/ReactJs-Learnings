@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hole {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: bisque;
+}
+
+.mole {
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+    background-color: gray;
+}
+
+
+.GameBoard {
+    display: grid;
+    width:600px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+}
