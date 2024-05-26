@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
+import HitMoleSound from "../resources/audio/HitMoleSound.mp3";
+import { useLocation } from "react-router-dom";
+import { gameConfig } from "../Config/config";
 
 export const usePlaygroundOperations = () => {
-
+const Location = useLocation();
 const [moles,setMoles] = useState(new Array(9).fill(false));
 const [score,setScore] = useState(0);
 const [status,setStatus] = useState(false);
+const [molegameConfig,setMoleGameConfig] = useState();
+let HitSound = new Audio(HitMoleSound);
+
+useEffect(()=>{
+    setMoleGameConfig(gameConfig[Location.state.level])
+},[]);
 
 useEffect(()=>{
     try{
@@ -14,9 +23,9 @@ useEffect(()=>{
             setTimeout(() => {
                 setMoleVisiblity(randomPosition,false);
             },500)
-         },1000);
+         },molegameConfig?.GapTime);
 
-         if(score == 10)
+         if(score == molegameConfig?.MaxScore)
          {
             interval ? clearInterval(interval) : "";
             setStatus(true);
@@ -29,7 +38,7 @@ useEffect(()=>{
     }catch(e){
         throw new Error(e);
     }
-},[moles]);
+},[moles,molegameConfig]);
 
 const setMoleVisiblity = (index,isVisible) => {
     try{
@@ -48,6 +57,7 @@ const hitTheMole = (index) => {
         if(moles[index])
         {
             setMoleVisiblity(index,false);
+            HitSound.play();
             setScore((prevVal) => {
                 return ++prevVal;
             }
@@ -60,11 +70,23 @@ const hitTheMole = (index) => {
     }
 }
 
+const resetGame = ()=>{
+    try{
+        setMoles(new Array(9).fill(false));
+        setScore(0);
+        setStatus(false);
+    }catch(e){
+        throw new Error(e);
+    }
+}
+
 return {
     moles: moles,
     score:score,
     hitTheMole:hitTheMole,
-    status
+    status,
+    molegameConfig,
+    resetGame
 }
 
 }

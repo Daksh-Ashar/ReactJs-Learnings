@@ -2,7 +2,7 @@ import { usePlaygroundOperations } from "../hooks/usePlaygroundOperations";
 import '../App.css';
 
 export const PlayGround = () => {
-const {moles,score,status,hitTheMole} = usePlaygroundOperations();
+const {moles,score,status,hitTheMole,molegameConfig,resetGame} = usePlaygroundOperations();
 
  return (
     <>
@@ -15,6 +15,12 @@ const {moles,score,status,hitTheMole} = usePlaygroundOperations();
                 );
             })
         }
+
+        {score == molegameConfig?.MaxScore ? 
+        <>
+        <div>Winner</div>
+        <button onClick={resetGame}>Play Again</button>
+        </> : ""}
         </div>
     </>
  )

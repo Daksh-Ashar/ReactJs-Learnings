@@ -7,15 +7,15 @@
 .hole {
     height: 200px;
     width: 200px;
-    border: 1px solid black;
-    background-color: bisque;
+    background-image: url('./resources/images/WithoutMole.png');
+    background-size: contain;
 }
 
 .mole {
     height: 200px;
     width: 200px;
-    border: 1px solid white;
-    background-color: gray;
+    background-image: url('./resources/images/WithMole.png');
+    background-size: contain;
 }
 
 
@@ -24,4 +24,86 @@
     width:600px;
     grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
+}
+
+
+
+/*====================HomePage=========================================*/
+
+.HomeCnt {
+    display: flex;
+    width: 100vw;
+    height:100vh;
+    /* background-color: bisque; */
+}
+
+.HomeGameImg{
+    background-color: #91fd77;
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 50%;
+}
+
+.HomeGameImg span {
+    font-size: 4rem;
+    font-weight: 900;
+    color:#735220;
+}
+
+.HomeActionBtns{
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+}
+
+.LevelSection{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+
+.GameTitle{
+    color: goldenrod;
+    font-size: 3rem;
+    margin-bottom:30%;
+    font-weight: 900;
+}
+
+.LevelSection button{
+    margin: 3%;
+    font-size: 1.5rem;
+    height: 10%;
+    color: gray;
+    background-color: burlywood;
+    cursor: pointer;
+}
+
+.LevelSection button:hover{
+    color: burlywood;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.HeroSection{
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width:inherit;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.LevelSection span{
+    color: rgb(96, 73, 44);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.MoleImg,.withoutMoleImg{
+    max-width: 300px;
+    height: 200px;
 }
