@@ -8,14 +8,16 @@
     height: 200px;
     width: 200px;
     background-image: url('./resources/images/WithoutMole.png');
-    background-size: contain;
+    background-size: cover;
+    cursor: pointer;
 }
 
 .mole {
     height: 200px;
     width: 200px;
     background-image: url('./resources/images/WithMole.png');
-    background-size: contain;
+    background-size: cover;
+    cursor: pointer;
 }
 
 
@@ -77,14 +79,14 @@
     margin: 3%;
     font-size: 1.5rem;
     height: 10%;
-    color: gray;
-    background-color: burlywood;
+    color: white;
+    background-color: #735220;
     cursor: pointer;
 }
 
 .LevelSection button:hover{
-    color: burlywood;
-    background-color: gray;
+    color: #735220;
+    background-color: white;
     cursor: pointer;
 }
 
@@ -93,8 +95,9 @@
     align-items: center;
     height: 80%;
     width:inherit;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin: auto;
+    margin-top: 10%;
+    animation: moleAnimation 1s infinite;
 }
 
 .LevelSection span{
@@ -103,7 +106,63 @@
     font-weight: 800;
 }
 
-.MoleImg,.withoutMoleImg{
+
+
+/* .MoleImg,.withoutMoleImg{
     max-width: 300px;
     height: 200px;
-}
+} */
+
+@keyframes moleAnimation {
+    0% {
+        background-image: url("./resources/images/WithMole.png");
+        background-repeat: no-repeat;
+        height: 200px;
+        width: 300px;
+    }
+    50% {
+        background-image: url("./resources/images/WithoutMole.png");
+        background-repeat: no-repeat;
+        height: 200px;
+        width: 300px;
+    }
+    100% {
+        background-image: url("./resources/images/WithMole.png");
+        background-repeat: no-repeat;
+        height: 200px;
+        width: 300px;
+    }
+  }
+
+/*==================== Responsive HomePage=========================================*/
+
+@media only screen and (max-width: 1400px) {
+    .HomeCnt {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .HeroSection {
+        display: flex;
+        height: 60%;
+        width: inherit;
+        justify-content: center;
+    }
+
+    .GameStartSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 30%;
+    }
+
+    .GameTitle {
+        font-size: 2rem;
+        margin-bottom: 20%;
+        margin-top: 5%;
+    }
+
+    .HomeGameImg span {
+        font-size: 5rem;
+    }
+  }
