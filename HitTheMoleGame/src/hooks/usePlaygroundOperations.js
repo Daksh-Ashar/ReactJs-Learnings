@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import HitMoleSound from "../resources/audio/HitMoleSound.mp3";
 import { useLocation } from "react-router-dom";
 import { gameConfig } from "../Config/config";
@@ -53,11 +53,12 @@ useEffect(()=>{
 useEffect(()=>{
     try{
         let interval = setInterval(()=>{
-            const randomPosition = Math.floor(Math.random() * moles.length);
+            //const randomPosition = Math.floor(Math.random() * moles.length);
+            const randomPosition = 1;
             setMoleVisiblity(randomPosition,true);
             setTimeout(() => {
                 setMoleVisiblity(randomPosition,false);
-            },500)
+            },1000)
          },molegameConfig?.GapTime);
 
          
@@ -96,7 +97,7 @@ const setMoleVisiblity = (index,isVisible) => {
     }
 }
 
-const hitTheMole = (index) => {
+const hitTheMole = useCallback((index) => {
     try{
         if(moles[index])
         {
@@ -112,7 +113,7 @@ const hitTheMole = (index) => {
     }catch(e){
         throw new Error(e);
     }
-}
+},[moles]);
 
 const resetGame = ()=>{
     try{
