@@ -10,7 +10,16 @@ export const useHomeScreenHook = () => {
             console.log(e);
         }
     }
+
+    const NavigateToScreen = (route) => {
+        try {
+            Navigate(route);
+        } catch (error) {
+            console.log(error);
+        }
+    }
         return {
-            LoadGameBoard
+            LoadGameBoard,
+            NavigateToScreen
         }
 }

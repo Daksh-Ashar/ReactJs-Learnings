@@ -9,7 +9,7 @@ const {moles,score,status,hitTheMole,molegameConfig,resetGame,TimeLimit,Hstats} 
     <>
     {/* <h2>Score: {score} {molegameConfig?.messages?.[status]} Time: {TimeLimit} HScore:{Hstats}</h2> */}
         <div className="GameBordCnt">
-            <Header/>
+            <Header score={score} Time={TimeLimit} MaxScore={Hstats} />
             <div className="GameBoard">
             {
                 moles.map((isMole,index)=>{

@@ -1,5 +1,6 @@
 import { defaultStats } from "../Config/config";
 
+
 export const setStats = (level,score) => {
     try{
         let stats = localStorage.getItem("gameStats") ? JSON.parse(localStorage.getItem("gameStats")) : defaultStats;

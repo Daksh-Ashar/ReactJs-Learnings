@@ -1,19 +1,24 @@
 import '../App.css'
 
-function Header() {
+function Header({score,Time,MaxScore}) {
   return (
             <div className="GameHeader">
-                    <div>
-                        <h2>Game Stats</h2>
+                    <div className='GameTitle'>
+                        <span>Whack A Mole</span>
                     </div>
-                    <div>
-                        <h2>Score :- 5</h2>
-                    </div>
-                    <div>
-                        <h2>Time :- 5:00</h2>
-                    </div>
-                    <div>
-                        <h2>High Score :- 3</h2>
+                    <div className='GameStats'>
+                        <div>
+                            <h1>Game Stats</h1>
+                        </div>
+                        <div className='StatsinfoBackground'>
+                            <span>Score :- {score}</span>
+                        </div>
+                        <div className='StatsinfoBackground'>
+                            <span>Time :- {Time}</span>
+                        </div>
+                        <div className='StatsinfoBackground'>
+                            <span>High Score :- {MaxScore}</span>
+                        </div>
                     </div>
             </div>
   )

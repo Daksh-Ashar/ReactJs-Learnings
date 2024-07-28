@@ -19,7 +19,7 @@ let GT;
 
 let startTimer = (duration) => {
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    let Ginterval= setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -30,6 +30,7 @@ let startTimer = (duration) => {
 
         if (--timer < 0) {
             timer = duration;
+            clearInterval(Ginterval)
         }
     }, 1000);
 }
@@ -53,8 +54,7 @@ useEffect(()=>{
 useEffect(()=>{
     try{
         let interval = setInterval(()=>{
-            //const randomPosition = Math.floor(Math.random() * moles.length);
-            const randomPosition = 1;
+            const randomPosition = Math.floor(Math.random() * moles.length);
             setMoleVisiblity(randomPosition,true);
             setTimeout(() => {
                 setMoleVisiblity(randomPosition,false);
