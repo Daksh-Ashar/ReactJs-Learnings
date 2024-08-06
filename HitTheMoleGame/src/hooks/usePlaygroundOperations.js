@@ -36,8 +36,8 @@ let startTimer = (duration) => {
 }
 
 useEffect(()=>{
-    setMoleGameConfig(gameConfig[Location.state.level]);
-    let Time = 60000 * gameConfig[Location.state.level]["TimeLimit"];
+    setMoleGameConfig(gameConfig?.Level[Location.state.level]);
+    let Time = 60000 * gameConfig?.Level[Location.state.level]["TimeLimit"];
     console.log(Time);
     let Ginterval = setInterval(()=>{
         if(!GintervalTime)
@@ -46,7 +46,7 @@ useEffect(()=>{
               clearInterval(Ginterval);
             }
      },Time); 
-     startTimer(gameConfig[Location.state.level]["TimeLimit"]*60);
+     startTimer(gameConfig?.Level[Location.state.level]["TimeLimit"]*60);
      let gStates = getStats();
      setHstats(gStates[Location.state.level]?.MaxScore)
 },[]);

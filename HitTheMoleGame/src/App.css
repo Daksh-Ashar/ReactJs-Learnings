@@ -191,20 +191,73 @@
 {
     width:100%;
     height:10vh;
-    background-color: #735220;
-    color: white;
+    background-color: #91fd77;
+    color: #735220;
     font-weight: bold;
     text-align: center;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
 }
 
 .GameSettingsCnt {
-    height: 50vh;
     width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2c178;
+    color: white;
+}
+
+.ConfCnt{
+    margin-left: 2%;
+    background-color: white;
+    color: #735220;
+    font-weight: bold;
+    padding: 1%;
+    height: max-content;
+    width: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 5%;
+    justify-content: space-evenly;
+}
+
+.ConfLevelName
+{
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+.ConfLabel 
+{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.confInput{
+    width: 100%;
+    font-size: 1rem;
+    padding: 1%;
+}
+
+.confUpdateInput {
+    width: 5vw;
+    height: 4vh;
+    font-size: 2rem;
+    padding: 1%;
+    color: white;
+    background-color: #735220;
+    cursor: pointer;
+}
+
+.ConfItems {
+    margin-top:2rem;
 }
 
 @keyframes moleAnimation {

@@ -1,18 +1,20 @@
 export const gameConfig = {
-    "Easy": {
-        "GapTime":2000,
-        "MaxScore":5,
-        "TimeLimit":2
-    },
-    "Medium": {
-        "GapTime":1000,
-        "MaxScore":10,
-        "TimeLimit":3
-    },
-    "Hard":{
-        "GapTime":500,
-        "MaxScore":10,
-        "TimeLimit":4
+    "Level":{
+        "Easy": {
+            "GapTime":2000,
+            "MaxScore":5,
+            "TimeLimit":2
+        },
+        "Medium": {
+            "GapTime":1000,
+            "MaxScore":10,
+            "TimeLimit":3
+        },
+        "Hard":{
+            "GapTime":500,
+            "MaxScore":10,
+            "TimeLimit":4
+        }
     },
     "messages": {
         "1": "You won...",
