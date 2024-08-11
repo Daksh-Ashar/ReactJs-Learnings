@@ -1,4 +1,4 @@
-import { defaultStats } from "../Config/config";
+import { defaultgameConfig, defaultStats } from "../Config/config";
 
 
 export const setStats = (level,score) => {
@@ -22,3 +22,23 @@ export const getStats = () => {
         console.log(error);
     }
 }
+
+export const getGameConfig = () => {
+    try {
+        let gameConfig = localStorage.hasOwnProperty("gameConfig") ? JSON.parse(localStorage.getItem("gameConfig")) : defaultgameConfig;
+        return gameConfig;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getdefaultMinValueConfig = (Level) => {
+    try {
+        let gameConfig = defaultgameConfig[Level];
+        gameConfig["GapTime"] = gameConfig["GapTime"]/1000;
+        return gameConfig;
+    } catch (error) {
+        console.log(error);
+    }
+}
+

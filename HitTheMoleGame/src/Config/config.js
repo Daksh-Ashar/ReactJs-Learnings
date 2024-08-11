@@ -7,7 +7,7 @@ export const gameConfig = {
         },
         "Medium": {
             "GapTime":1000,
-            "MaxScore":10,
+            "MaxScore":8,
             "TimeLimit":3
         },
         "Hard":{
@@ -32,7 +32,7 @@ export const defaultgameConfig = {
     },
     "Medium": {
         "GapTime":1000,
-        "MaxScore":10,
+        "MaxScore":8,
         "TimeLimit":3
     },
     "Hard":{
