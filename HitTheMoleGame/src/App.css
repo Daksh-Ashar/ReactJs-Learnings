@@ -281,6 +281,57 @@
     }
   }
 
+
+/*==================== Responsive Result=========================================*/
+
+.ResultCnt
+{
+    height: 300px;
+    width: 500px;
+    background-color: #91fd77;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.ResultStatusCnt 
+{
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+.ResultScoreLabel
+{
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+}
+
+.ResultScoreValue
+{
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+}
+
+.ResultBtns
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.ResetBtns{
+    background-color: #735220;
+    color: white;
+    width: 5vw;
+    height: 3vh;
+    padding: 1%;
+    font-weight: 800;
+    cursor: pointer;
+}
 /*==================== Responsive HomePage=========================================*/
 
 @media only screen and (max-width: 1400px) {

@@ -1,10 +1,7 @@
-import { defaultgameConfig } from "../Config/config"
 import { getdefaultMinValueConfig, getGameConfig } from "../Utils/utils"
 
 export const useGameSettings = ({Level,GapTime,MaxScore,TimeLimit,setLevel,setGapTime,setMaxScore,setTimeLimit,setDefaultMinValue}) => {
-    const onChangeData = () => {
-        console.log("Config Changed")
-    }
+
     const updateConfig = ({Config}) => {
         var gameConfig = getGameConfig();
         var level = Config.Level;
@@ -31,7 +28,6 @@ export const useGameSettings = ({Level,GapTime,MaxScore,TimeLimit,setLevel,setGa
     }
 
         return {
-            onChangeData,
             updateConfig,
             onLevelChange
         }

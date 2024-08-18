@@ -11,6 +11,7 @@ import {
 import { PlayGround } from './views/PlayGround.jsx';
 import { GameInfo } from './views/GameInfo.jsx';
 import { GameSettings } from './views/GameSettings.jsx';
+import { Result } from './views/Result.jsx';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="/playground" element={<PlayGround />} />
       <Route path="/GameInfo" element={<GameInfo />} />
       <Route path="/GameSettings" element={<GameSettings />} />
+      <Route path="/Result" element={<Result />} />
     </Route>
   )
 );

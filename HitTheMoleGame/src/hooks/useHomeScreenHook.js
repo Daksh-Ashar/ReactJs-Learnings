@@ -6,8 +6,8 @@ export const useHomeScreenHook = () => {
     const LoadGameBoard = (level) => {
         try{
             Navigate('/playground',{state:{level}})
-        }catch(e){
-            console.log(e);
+        }catch(error){
+            console.log(error);
         }
     }
 
