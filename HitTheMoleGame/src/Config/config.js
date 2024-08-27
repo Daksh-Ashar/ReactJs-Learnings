@@ -28,7 +28,7 @@ export const defaultgameConfig = {
     "Easy": {
         "GapTime":2000,
         "MaxScore":5,
-        "TimeLimit":0.1
+        "TimeLimit":2
     },
     "Medium": {
         "GapTime":1000,

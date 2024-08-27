@@ -1,17 +1,20 @@
+import { useCallback } from "react";
 import { getdefaultMinValueConfig, getGameConfig } from "../Utils/utils"
 
 export const useGameSettings = ({Level,GapTime,MaxScore,TimeLimit,setLevel,setGapTime,setMaxScore,setTimeLimit,setDefaultMinValue}) => {
 
-    const updateConfig = ({Config}) => {
+    const updateConfig = useCallback(({Config}) => {
         var gameConfig = getGameConfig();
         var level = Config.Level;
         var updateConfig = {};
         updateConfig[level] = {...Config};
-        updateConfig[level]["GapTime"] = GapTime * 1000;
+        updateConfig[level]["GapTime"] = GapTime * 1000 ;
+        updateConfig[level]["TimeLimit"] = TimeLimit ;
+        updateConfig[level]["MaxScore"] = MaxScore;
         delete updateConfig[level].Level;
         localStorage.setItem("gameConfig",JSON.stringify({...gameConfig,...updateConfig}))
         alert("Config updated successfully")
-    }
+    },[GapTime,TimeLimit,MaxScore])
 
     const onLevelChange = ({Level}) => {
         try {

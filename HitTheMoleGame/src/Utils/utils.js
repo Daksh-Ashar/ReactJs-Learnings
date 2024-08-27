@@ -1,5 +1,5 @@
 import { defaultgameConfig, defaultStats } from "../Config/config";
-
+import _  from 'lodash';
 
 export const setStats = (level,score) => {
     try{
@@ -37,7 +37,7 @@ export const getGameConfig = () => {
 
 export const getdefaultMinValueConfig = (Level) => {
     try {
-        let gameConfig = defaultgameConfig[Level];
+        let gameConfig = _.cloneDeep(defaultgameConfig[Level]);
         gameConfig["GapTime"] = gameConfig["GapTime"]/1000;
         return gameConfig;
     } catch (error) {
