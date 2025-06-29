@@ -6,7 +6,7 @@ export const Result = () => {
     const Location = useLocation();
     const ResultData = Location.state || {};
     const {resetGame} = usePlaygroundOperations();
-    const {resetAndRedirect} = useResult({ResultData,resetGame});
+    const {resetAndRedirect, returnToHome} = useResult({ResultData,resetGame});
      return (
         <>
             <div className="ResultCnt">
@@ -20,7 +20,8 @@ export const Result = () => {
                     <center>{ResultData?.score || 0}</center>
                 </div>
                 <div className="ResultBtns">
-                    <button className="ResetBtns" onClick={resetAndRedirect}>Play Again</button>
+                    <button className="ResetBtns" onClick={resetAndRedirect}>Play Again</button> 
+                    <button className="leftSpacing ResetBtns" onClick={returnToHome}>Home</button>
                 </div>
             </div>
             

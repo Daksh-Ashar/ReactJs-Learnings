@@ -13,7 +13,16 @@ export const useResult = ({ResultData,resetGame}) => {
         }
     }
 
+    const returnToHome = () => {
+        try {
+            Navigate("/")
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
         return {
-            resetAndRedirect
+            resetAndRedirect,
+            returnToHome
         }
 }
