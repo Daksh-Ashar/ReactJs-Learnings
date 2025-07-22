@@ -1,0 +1,14 @@
+{
+  "name": "polyfills",
+  "version": "1.0.0",
+  "main": "Map_Polyfill.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
